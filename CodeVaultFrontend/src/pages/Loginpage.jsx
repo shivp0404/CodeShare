@@ -27,7 +27,8 @@ const Loginpage = () => {
 
       if (response.ok) {
         const data = await response.json();
-        alert('Login successful');
+       
+     
         navigate(`/user/${data._id}`)
        
        
@@ -43,7 +44,7 @@ const Loginpage = () => {
   return (
     <div className="min-h-screen  flex flex-col">
       <Navbar />
-      <div className="flex-grow bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ...  flex justify-center items-center">
+      <div className="flex-grow bg-gray-800  flex justify-center items-center">
         <div className="w-96 p-8 bg-gray-100 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold mb-4">Login</h2>
           <form onSubmit={handleSubmit}>

@@ -34,7 +34,7 @@ const Sidebar = () => {
   }
 
   return (
-    <aside className="bg-secondary text-white w-1/4 px-4 py-8 hidden sm:block">
+    <aside className="bg-gray-800 text-white w-1/4 px-4 py-8 hidden sm:block">
       <div className=" mb-6">
         <button><Link className="text-xl font-bold  " to={`/user/${id}`}>Snippets</Link></button>
         <ul className="text-lg">

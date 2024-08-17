@@ -36,7 +36,7 @@ const Mainpage = () => {
 
       if (response.ok) {
         const result = await response.json();
-        console.log('Snippet created successfully:', result);
+        console.log('Snippet created successfully:');
         setFormData({
           heading: '',
           description: '',

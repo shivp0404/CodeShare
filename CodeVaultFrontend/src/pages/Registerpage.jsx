@@ -35,13 +35,14 @@ const RegisterPage = () => {
       });
 
       if (response.ok) {
-        alert('Form submitted successfully');
+      
+       
         navigate('/login');
       } else {
-        alert('Form submission failed');
+        console.error('Error:', error);
       }
     } catch (error) {
-      console.error('Error:', error);
+     console.error('Error:', error);
       alert('An error occurred');
     }
   };

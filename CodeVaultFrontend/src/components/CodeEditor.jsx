@@ -5,7 +5,7 @@ const CodeEditor = ({handlesubmit,handlechange,formData}) => {
 
 
   return (
-    <div className="flex bg-highlight flex-col w-full p-2 h-screen">
+    <div className="flex bg-gray-800 flex-col w-full p-2 h-screen">
       <form onSubmit={handlesubmit} className="flex flex-col w-full  h-screen">
       <div className='w-full  flex  justify-between'>
       <input

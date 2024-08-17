@@ -17,7 +17,7 @@ const ProfilePage = () => {
         const userProfileResponse = await fetch(`http://localhost:3000/user/${id}`);
         const userProfileData = await userProfileResponse.json();
         setUserProfile(userProfileData);
-        console.log(userProfileData)
+      
       } catch (error) {
         console.error('Error fetching user profile:', error);
       } finally {
@@ -57,17 +57,12 @@ const ProfilePage = () => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-500 ...   flex flex-col">
+    <div className="min-h-screen text-white bg-gray-800   flex flex-col">
       <Navbar />
       <div className="container  mx-auto flex-grow">
         <div>
           <div className="flex justify-between items-center mt-8">
             <div>
-            <img
-              src={userProfile.avatar}
-              alt="User Avatar"
-              className="w-16 h-16 rounded-full mr-4"
-            />
               <h2 className="text-2xl font-semibold">{userProfile.username}</h2>
               <p className="text-gray-600">{userProfile.email}</p>
               <p className="text-gray-700 mt-2">{userProfile.bio}</p>
