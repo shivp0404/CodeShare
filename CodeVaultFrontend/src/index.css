@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #4A90E2; /* Deep Sky Blue */
+  --secondary-color: #50E3C2; /* Turquoise Green */
+  --accent-color: #9013FE; /* Vivid Violet */
+  --background-color: #F5F7FA; /* Very Light Gray */
+  --text-color: #333333; /* Dark Gray */
+}
+
+
+
