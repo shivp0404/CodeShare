@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import CodeSnippetCard from '../components/CodeSnippetCard';
 import { useParams,Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const ProfilePage = () => {
   const { id } = useParams();
@@ -47,36 +48,41 @@ const ProfilePage = () => {
 
       if (response.ok) {
         navigate('/login');
+        toast.success("login for adding snippet")
       } else {
         console.error('Logout failed');
+        toast.error('Logout failed')
       }
     } catch (error) {
       console.error('Error logging out:', error);
+      toast.error('Error logging out');
     }
   };
 
 
   return (
-    <div className="min-h-screen text-white bg-gray-800   flex flex-col">
+    <div className="min-h-screen text-white bg-black   flex flex-col">
       <Navbar />
       <div className="container  mx-auto flex-grow">
         <div>
-          <div className="flex justify-between items-center mt-8">
+          <div className="flex p-3 justify-between items-center mt-2">
             <div>
               <h2 className="text-2xl font-semibold">{userProfile.username}</h2>
-              <p className="text-gray-600">{userProfile.email}</p>
-              <p className="text-gray-700 mt-2">{userProfile.bio}</p>
+              <p className="text-white">{userProfile.email}</p>
+              <p className="text-white">{userProfile.bio}</p>
+            
             </div>
-          <div>
-          <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2"><Link to={`/main/${id}`} >create Snippet</Link></button>
-          <button onClick={logout}  className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2">logout</button>
+          <div className='px-3'>
+          <button type="button" className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2"> <Link to={`/main/${id}`} >Create Snippet</Link> </button> 
+          <button onClick={logout}  className="bg-blue-500 text-white px-4 py-2 rounded-md mr-1">logout</button>
           </div>
           </div>
-          <h3 className="text-xl font-semibold mt-8">Created Code Snippets</h3>
-          <ul className="mt-4 flex flex-wrap">
+          <h3 className="text-3xl p-3 font-semibold ">Created Code Snippets</h3>
+          <ul className="mt-4 flex item-center  flex-wrap">
             {userProfile.snippets.map(snippet => (
               <li key={snippet._id} className="m-2">
                 <CodeSnippetCard snippet={snippet} id={id} />
+                
               </li>
             ))}
           </ul>

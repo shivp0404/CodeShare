@@ -130,7 +130,7 @@ router.post("/main/:id" , async (req, res) => {
     
     await user.save();
     const savedSnippet = await newSnippet.save();
-    res.status(201).json(savedSnippet);
+    res.status(201).json("done");
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }

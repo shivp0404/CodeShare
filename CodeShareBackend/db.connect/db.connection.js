@@ -1,9 +1,10 @@
 // config/db.js
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-        await mongoose.connect('mongodb://localhost:27017/CodeVault', {
+        await mongoose.connect(process.env.DB_Uri, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         

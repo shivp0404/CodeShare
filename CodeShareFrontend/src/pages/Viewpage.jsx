@@ -8,7 +8,7 @@ import { FaTimes } from "react-icons/fa";
 import { FiEdit, FiTrash2} from 'react-icons/fi'; // Example icons from react-icons
 import { FaClipboard, FaWhatsapp, FaFacebook, FaSnapchat, FaInstagram } from 'react-icons/fa'; // More icons
 import { useNavigate } from 'react-router';
-
+import toast from 'react-hot-toast';
 const ViewPage = () => {
   const { id, id2 } = useParams();
   const [code, setCode] = useState(null);
@@ -41,7 +41,8 @@ const ViewPage = () => {
         method: 'DELETE',
       });
       if (response.ok) {
-        confirm("You want to delete this Snippet")
+        // confirm("You want to delete this Snippet")
+        toast.success("Delete the snippet");
         navigate(`/main/${id}`)
       } else {
         console.error('Failed to delete content');

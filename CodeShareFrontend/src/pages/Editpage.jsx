@@ -5,6 +5,7 @@ import CodeEditor from '../components/CodeEditor';
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
+import toast from 'react-hot-toast';
 const Editpage = () => {
   const {id,id2} = useParams()
   const [formdata, setFormData] = useState({
@@ -24,9 +25,11 @@ const Editpage = () => {
           setFormData(data);
           
         } else {
+          toast.error("Snippet not found");
           console.error('Snippet not found');
         }
       } catch (error) {
+        toast.error("Error fetching code:")
         console.error('Error fetching code:', error);
       }
     };
@@ -62,21 +65,24 @@ const Editpage = () => {
           code: '',
           tagInput: ''
         })
-        console.log('Snippet created successfully:', result);
-        // You can add further logic here, such as displaying a success message or resetting the form
+  
+        toast.success("Snippet edited successfully!");
+
       } else {
-        console.error('Snippet creation failed:', response.statusText);
+        console.error('Snippet Creation failed:', response.statusText);
+        toast.error("Snippet Edited Failed!");
         // You can handle errors here, such as displaying an error message to the user
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      toast.error("Error submitting form");
       // Handle the error appropriately
     }
   };
   
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-black ">
       <Navbar />
       <div className="flex flex-grow">
         <Sidebar />
