@@ -14,7 +14,7 @@ const Sidebar = ({ refreshTrigger }) => {
 
   const fetchUserProfile = async () => {
     try {
-      const userProfileResponse = await fetch(`http://localhost:3000/main/${id}`);
+      const userProfileResponse = await fetch(`/main/${id}`);
       const userProfileData = await userProfileResponse.json();
       setUserProfile(userProfileData);
     } catch (error) {

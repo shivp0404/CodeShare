@@ -20,7 +20,7 @@ const ViewPage = () => {
     const fetchCode = async () => {
       try {
         // Fetch code based on the ID from the URL
-        const response = await fetch(`http://localhost:3000/main/${id}/view/${id2}`);
+        const response = await fetch(`/main/${id}/view/${id2}`);
         const data = await response.json();
         if (data) {
           setCode(data.code);

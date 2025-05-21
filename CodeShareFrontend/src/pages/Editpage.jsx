@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
+import api from '../pages/api'
 const Editpage = () => {
   const {id,id2} = useParams()
   const [formdata, setFormData] = useState({
@@ -18,7 +19,9 @@ const Editpage = () => {
     const fetchCode = async () => {
       try {
         // Fetch code based on the ID from the URL
-        const response = await fetch(`http://localhost:3000/main/${id}/edit/${id2}`);
+        const response = await fetch(`/main/${id}/edit/${id2}`);
+        // const response = await fetch(`/main/${id}/edit/${id2}`);
+
         const data = await response.json();
        
         if (data) {

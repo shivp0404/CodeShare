@@ -31,7 +31,7 @@ const Mainpage = () => {
     event.preventDefault();
     try {
   
-      const response = await fetch(`http://localhost:3000/main/${id.id}`, {
+      const response = await fetch(`/main/${id.id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

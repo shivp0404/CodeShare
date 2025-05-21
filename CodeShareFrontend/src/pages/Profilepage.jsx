@@ -39,7 +39,7 @@ const ProfilePage = () => {
 
   const logout = async () => {
     try {
-      const response = await fetch('http://localhost:3000/logout', {
+      const response = await fetch('/logout', {
         method: 'get',
         headers: {
           'Content-Type': 'application/json',
