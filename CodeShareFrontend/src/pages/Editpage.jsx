@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
-import api from '../pages/api'
+
 const Editpage = () => {
   const {id,id2} = useParams()
   const [formdata, setFormData] = useState({
