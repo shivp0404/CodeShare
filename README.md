@@ -138,7 +138,13 @@ DB_URI="your-mongodb-link"
 
 ## 🖼️ Screenshots
 
-_Screenshots coming soon!_
+- ![CodeShare home page ](./screenshots/home%20page.png)
+- ![CodeShare login page ](./screenshots/login%20page.png)
+- ![CodeShare profile page ](./screenshots/profile%20page.png)
+- ![CodeShare view page ](./screenshots/view%20page.png)
+- ![CodeShare add page ](./screenshots/add%20page.png)
+
+
 
 ---
 
